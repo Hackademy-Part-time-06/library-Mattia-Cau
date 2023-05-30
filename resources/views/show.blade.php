@@ -10,7 +10,8 @@
     <h2>dettagli</h2>
     <p>nome:{{$book->name}} </p>
     <p>autore: {{$book->author}}</p>
-    <p>immagine {{$book->image}}</p>
+    <div><img src="{{empty($book->image) ? Storage::url('/images/dafaultimage.png') : Storage::url($book->image) }}" alt=""></div>
+    
 
 </body>
 </html>

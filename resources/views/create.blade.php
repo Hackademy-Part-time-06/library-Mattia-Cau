@@ -10,11 +10,11 @@
     <form action="{{route('books.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('POST')
-        <input type="text" name="name" value="" required placeholder="nome">
-        <input type="text" name="author" value="" required placeholder="autore">
-        <input type="number" name="year" value="" placeholder="anno">
-        <input type="number" name="pages" value="" placeholder="pagine">
-        <input type="file" name="image" value="" >
+        <input type="text" name="name" value="{{old(name)}}" required placeholder="nome">
+        <input type="text" name="author" value="{{old(author)}}" required placeholder="autore">
+        <input type="number" name="year" value="{{old(year)}}" placeholder="anno">
+        <input type="number" name="pages" value="{{old(pages)}}" placeholder="pagine">
+        <input type="file" name="image" value="{{old(image)}}" >
         <button type="submit">invia</button>
     </form>
 </body>

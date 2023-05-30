@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Bookrequest;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class BooksController extends Controller
     }
 
 
-    public function store(Request $request){
+    public function store(Bookrequest $request){
 
         // $book =new Book();
         // $book->name= 'esempio';
@@ -57,17 +58,16 @@ class BooksController extends Controller
     public function create(){
         return view('create');
     }
-    public function show($book){
+    public function show(Book $book){
 
         // $mybook=Book::find($book);
         // if(is_null($mybook)){
         //     abort(404);
         // }
 
-        $mybook=Book::findOrFail($book);
-        
-
-        return view('show',['book'=>$mybook]);
+        //$mybook=Book::findOrFail($book);
+    
+        return view('show',['book'=>$book]);
     }
 
 }
