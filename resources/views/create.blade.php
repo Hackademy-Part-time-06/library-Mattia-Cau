@@ -7,13 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{route('books.store')}}" method="POST">
+    <form action="{{route('books.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('POST')
-        <input type="text" name="name" value="">
-        <input type="text" name="author" value="">
-        <input type="text" name="year" value="">
-        <input type="text" name="pages" value="">
+        <input type="text" name="name" value="" required placeholder="nome">
+        <input type="text" name="author" value="" required placeholder="autore">
+        <input type="number" name="year" value="" placeholder="anno">
+        <input type="number" name="pages" value="" placeholder="pagine">
+        <input type="file" name="image" value="" >
         <button type="submit">invia</button>
     </form>
 </body>

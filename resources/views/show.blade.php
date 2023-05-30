@@ -10,6 +10,7 @@
     <h2>dettagli</h2>
     <p>nome:{{$book->name}} </p>
     <p>autore: {{$book->author}}</p>
+    <p>immagine {{$book->image}}</p>
 
 </body>
 </html>

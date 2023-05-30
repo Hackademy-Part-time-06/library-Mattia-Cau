@@ -23,13 +23,31 @@ class BooksController extends Controller
         // $book->year=2022 ;
         // $book->author='esempio ';
         // $book->save();
-        // dd('crea');
+
+/////////////////////////////////////
+//verifica inserimento immagini
+//////////////////////////////////////
+         //dd($request->hasFile('image'));
+         //conrollare se abbiamo inserito l'immagine
+         //dd($request->file('image'));
+         //controllare se il fail è stato caricato
+         //dd($request->file('image')->isValid());
+         $path_image='';
+         if ($request->hasFile('image') && $request->file('image')->isValid()){
+            $path_name = $request->file('image')->getClientOriginalName();
+            //$path_extension = $request->file('image')->getClientOriginalExtension();
+            $path_image = $request->file('image')->storeAs('public/images' , $path_name);
+         }
+         
+////////////////////////////////////
+////////////////////////////////////
 
         Book::create([
             'name'=>$request->name,
             'author'=>$request->author,
             'year'=>$request->year,
-            'pages'=>$request->pages
+            'pages'=>$request->pages,
+            'image'=>$path_image
         ]);
 
         return redirect()->route('books.index');

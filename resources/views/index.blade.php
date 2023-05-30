@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <ul> @forelse ($books as $book)
+    <ul> 
+    @forelse ($books as $book)
         <li><a href="{{route('books.show', ['book' => $book['id']])}}">{{$book['name']}} - {{$book['author']}}-{{$book['year']}}</a></li>
         @empty
         nessun libro
