@@ -11,8 +11,28 @@
         </ul>
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+            @auth
+            <form method="POST" action="{{route('logout')}}">
+              @csrf
+              <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li class="btn btn-outline-light me-2">
+                <a class="nav-link px-2 text-white" href="{{route('logout')}}" onclick="event.preventDefault();this.closest('form').submit();">Logout</a>
+              </li>
+              </ul>
+              
+              
+            </form>
+            @else
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li  class="btn btn-outline-light me-2">
+                <a href="{{route('register')}}" class="nav-link px-2 text-white">Registrati</a>
+              </li>
+              <li class="btn btn-warning">
+                <a href="{{route('login')}}" class="nav-link px-2 text-white">Accedi</a>
+              </li>
+            </ul>
+          
+            @endauth
         </div>
       </div>
     </div>

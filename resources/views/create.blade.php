@@ -28,19 +28,10 @@
                     <div class="mb-3"> 
                         <button type="submit">Inserisci libro</button>
                     </div>
-                    
-                    
-
-                   
-                   
+                                
                 </form>
             </div>
         </div>
     </div>
-    
-    
-    
-    
-    
 </x-layout>
 
