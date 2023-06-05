@@ -1,6 +1,4 @@
 <x-layout>
-
-
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
@@ -9,38 +7,34 @@
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
+                            <li>{{ $error }}</li>
                             @endforeach
                         </ul>
                     </div>
-                @endif
+                    @endif
                     @csrf
                     @method('POST')
-                    <div class="mb-3">
+                    <div class="mb-3 text-center">
                         <label for="name" class="form-label">Nome</label>
-                        <input class="form-controller" type="text" name="name" id="name" required placeholder="nome">
+                        <div><input class="form-controller" type="text" name="name" id="name" required placeholder="nome"></div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 text-center">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" id="email" required placeholder="mario.rossi@gmail.com">
+                        <div><input type="email" name="email" id="email" required placeholder="mario.rossi@gmail.com"></div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 text-center">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" id="password" placeholder="**********">
+                        <div><input type="password" name="password" id="password" placeholder="**********"></div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 text-center">
                         <label for="password_confirmation" class="form-label">Conferma password</label>
-                        <input type="password" name="password_confirmation" id="password_confirmation" placeholder="**********">
-                    </div>
-                   
-                    <div class="mb-3"> 
-                        <button type="submit">Registrati</button>
+                        <div><input type="password" name="password_confirmation" id="password_confirmation" placeholder="**********"></div>                        
                     </div>
                     
-                    
-
-                   
-                   
+                    <div class="mb-3 text-center"> 
+                        <button type="submit" class="mb-3">Registrati</button>
+                        <div><a href="{{route('login')}}">Sei già registrato?</a></div>
+                    </div>
                 </form>
             </div>
         </div>
