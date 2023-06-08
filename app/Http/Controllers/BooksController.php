@@ -79,5 +79,33 @@ class BooksController extends Controller
             return view('show',['book'=>$book]);
         }
         
+        public function edit(Book $book){
+            
+            return view('edit', ['book'=>$book]);
+        }
+        public function update(Bookrequest $request, Book $book){
+            
+            $path_image= $book->image;
+        if ($request->hasFile('image') && $request->file('image')->isValid()){
+            $path_name = $request->file('image')->getClientOriginalName();  
+            $path_image = $request->file('image')->storeAs('public/images' , $path_name);
+        }
+            
+        $book->update([
+            'name'=>$request->name,
+            'author'=>$request->author,
+            'year'=>$request->year,
+            'pages'=>$request->pages,
+            'image'=>$path_image
+        ]);
+           // dd($book);
+            return redirect()->route('books.index');
+        }
+        public function destroy(Book $book) {
+            $book->delete();
+            return redirect()->route('books.index');
+        }
+
+        
     }
     

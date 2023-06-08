@@ -1,7 +1,6 @@
 
 <x-layout>
     
-    
     <div class="container my-5 ">
         <div class="row justify-content-around">
             @forelse ($books as $book)
@@ -11,7 +10,13 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$book['name']}}</h5>
                         <p class="card-text">Autore: {{$book['author']}}</p>
-                        <a href="{{route('books.show', ['book' => $book['id']])}}" class="btn btn-primary">Dettagli</a>
+                        <a href="{{route('books.show', ['book' => $book['id']])}}" class="btn btn-primary">dettagli</a>                   
+                        <a href="{{route('books.edit', ['book' => $book['id']])}}" class="btn btn-warning">modifica</a>
+                        <form action="{{route('books.destroy', ['book' => $book['id']])}}" method="Post">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger">elimina</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -21,10 +26,6 @@
             
         </div>
     </div>
-    
-    
-    
- 
     
 </x-layout>
 
