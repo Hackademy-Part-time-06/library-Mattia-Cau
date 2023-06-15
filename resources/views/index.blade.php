@@ -6,7 +6,7 @@
             @forelse ($books as $book)
             <div class="col-12 col-md-4 my-3">
                 <div class="card" style="width: 18rem;">
-                    <img src="{{empty($book->image) ? Storage::url('/images/dafaultimage.png') : Storage::url($book->image) }}" class="card-img-top" alt="...">
+                    <img src="{{empty($book->image) ? Storage::url('/images/dafaultimage.png') : Storage::url($book->image) }}" class="card-img-top" alt="..." height="270px">
                     <div class="card-body">
                         <h5 class="card-title">{{$book['name']}}</h5>
                         <p class="card-text">Autore: {{$book['author']}}</p>

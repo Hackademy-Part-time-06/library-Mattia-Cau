@@ -5,6 +5,8 @@
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li><a href="{{ route('books.index')}}" class="nav-link px-2  text-white">Home</a></li>
         <li><a href="{{ route('books.create')}}" class="nav-link px-2 text-white">Inserisci un libro</a></li>
+        <li><a href="{{ route('author.create')}}" class="nav-link px-2 text-white">Inserisci un autore</a></li>
+        <li><a href="{{ route('author.index')}}" class="nav-link px-2 text-white">Lista autori</a></li>
       </ul>
       
       <div class="text-end">
